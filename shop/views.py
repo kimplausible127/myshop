@@ -10,6 +10,7 @@ def product_list(request, category_slug=None):
         products = Product.objects.filter(category=category)
     else:
         category = None
+        products = Product.objects.filter(available=True)
     return render(request,
                   'shop/product/list.html',
                   {'category': category,
@@ -25,5 +26,5 @@ def product_detail(request, id, slug):
     return render(request,
                   'shop/product/detail.html',
                   {'product': product})
-                  
+
 
