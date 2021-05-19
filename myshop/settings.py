@@ -133,3 +133,6 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CART_SESSION_ID = 'cart'
+
+# tells django to write emails to the console instead of an actual email
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
